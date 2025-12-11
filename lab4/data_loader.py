@@ -1,6 +1,7 @@
+from typing import Optional
+
 import pandas as pd
 from pathlib import Path
-from typing import Optional
 
 
 def create_dataframe_from_annotation(annotation_csv_path: Path) -> Optional[pd.DataFrame]:
@@ -44,9 +45,8 @@ def create_dataframe_from_annotation(annotation_csv_path: Path) -> Optional[pd.D
         
         return result_df
         
-    except FileNotFoundError as e:
-        print(f"Ошибка: {e}")
-        raise
+    except Exception as e:  
+        raise FileNotFoundError from e
     except Exception as e:
         error_msg = f"Ошибка при чтении CSV: {str(e)}"
         print(f"Ошибка: {error_msg}")

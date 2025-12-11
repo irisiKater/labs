@@ -17,7 +17,7 @@ def main() -> None:
     Основная функция программы
     """
     print("=" * 70)
-    print("ЛАБОРАТОРНАЯ РАБОТА №2 - АНАЛИЗ АУДИОФАЙЛОВ")
+    print("ЛАБОРАТОРНАЯ РАБОТА №4 - АНАЛИЗ АУДИОФАЙЛОВ")
     print("=" * 70)
     
     try:
@@ -27,9 +27,9 @@ def main() -> None:
         # Шаг 2: Проверяем наличие soundfile
         try:
             import soundfile as sf
-            print("✓ Библиотека soundfile доступна")
+            print("Библиотека soundfile доступна")
         except ImportError:
-            print("✗ Ошибка: библиотека soundfile не установлена")
+            print("Ошибка: библиотека soundfile не установлена")
             print("Установите ее командой: pip install soundfile")
             print("Для работы с MP3 также нужен: pip install pysoundfile")
             return
@@ -76,21 +76,16 @@ def main() -> None:
         print("=" * 70)
         
     except FileNotFoundError as e:
-        print(f"\n✗ Ошибка: Файл не найден - {e}")
+        print(f"\n Ошибка: Файл не найден - {e}")
     except PermissionError as e:
-        print(f"\n✗ Ошибка: Проблема с правами доступа - {e}")
+        print(f"\n Ошибка: Проблема с правами доступа - {e}")
     except ValueError as e:
-        print(f"\n✗ Ошибка: Неверные данные - {e}")
+        print(f"\n Ошибка: Неверные данные - {e}")
     except RuntimeError as e:
-        print(f"\n✗ Ошибка выполнения: {e}")
+        print(f"\n Ошибка выполнения: {e}")
     except Exception as e:
-        print(f"\n✗ Неизвестная ошибка: {type(e).__name__}: {e}")
+        print(f"\n Неизвестная ошибка: {type(e).__name__}: {e}")
 
 
-if __name__ == "__main__":
-    # Примеры запуска:
-    # python main.py --annotation "путь/к/annotation.csv"
-    # python main.py --annotation "annotation.csv" --plot-type histogram --bins 7
-    # python main.py -a "annotation.csv" -o "my_results" -p scatter
-    
+if __name__ == "__main__":    
     main()

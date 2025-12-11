@@ -24,8 +24,8 @@ def parse_arguments() -> Dict[str, Any]:
     parser.add_argument(
         '--output', '-o',
         type=str,
-        default='lab2_results',
-        help='Папка для сохранения результатов (по умолчанию: lab2_results)'
+        default='lab4_results',
+        help='Папка для сохранения результатов (по умолчанию: lab4_results)'
     )
     
     parser.add_argument(

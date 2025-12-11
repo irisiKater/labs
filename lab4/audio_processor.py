@@ -48,9 +48,8 @@ def calculate_max_amplitude_soundfile(audio_file_path: str) -> Optional[float]:
         
         return round(float(max_amplitude), 6)
         
-    except FileNotFoundError as e:
-        print(f"Ошибка: {e}")
-        raise
+    except Exception as e:  
+        raise FileNotFoundError from e
     except Exception as e:
         filename = Path(audio_file_path).name if isinstance(audio_file_path, str) else "unknown"
         error_msg = f"Ошибка при обработке {filename}: {str(e)}"
